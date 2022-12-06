@@ -6,7 +6,7 @@ const { postPullRequest } = require("./github.js");
 const main = async () => {
     fs.readFile("pr.json", (error, data) => {
 	if(error) {
-	    console.log("Unable to open pr.json. Make sure it is located on the root directory"); 
+	    console.log("Unable to open pr.json. Make sure it is located on the project root directory"); 
 	    process.exit(1);
 	}	
 
