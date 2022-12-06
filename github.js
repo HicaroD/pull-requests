@@ -17,11 +17,16 @@ const postPullRequest = async ({title, base_branch, head_branch, configuration})
     };
     let endpoint_url = `https://api.github.com/repos/${configuration.username}/${configuration.repository}/pulls`;
 
-    let response = await axios.post( 
-	endpoint_url,
-	body,
-	{ headers: headers }
-    ).then(({data}) => console.log(data));
+    let response = await axios
+	.post(
+	    endpoint_url,
+	    body,
+	    { headers: headers }
+        )
+	.then(({data}) => {
+	   console.log(data)
+	}
+    );
 }
 
 module.exports = { postPullRequest };
