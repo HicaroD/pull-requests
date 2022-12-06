@@ -1,7 +1,7 @@
 const axios = require("axios");
 
 const postPullRequest = async ({title, base_branch, head_branch, configuration}) => {
-    if (title === undefined || base_branch === undefined || username) {
+    if (title === undefined || base_branch === undefined) {
 	console.log("Title and/or base branch should not be empty");
     }
 
