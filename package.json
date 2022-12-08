@@ -7,9 +7,12 @@
     "main": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "bin": "./main.js",
+  "keywords": ["cli"],
+  "author": "Hícaro Dânrlley",
+  "repository": "https://github.com/HicaroD/pull-requests",
+  "homepage": "https://github.com/HicaroD/pull-requests#readme",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.2.1",
     "yargs": "^17.6.2"
