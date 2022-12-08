@@ -15,6 +15,7 @@ const main = async () => {
 	postPullRequest({
 	    title: "PR TITLE",
 	    base_branch: "master",
+	    head_branch: "test-branch",
 	    configuration: config_file,
 	});
     });
