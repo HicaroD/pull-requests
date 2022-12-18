@@ -26,25 +26,28 @@ class PullRequest:
         self.credentials = credentials
         self.pr_content = pr_content
 
-    async def make_pr(self):
+    def get_headers(self) -> dict:
         token = self.credentials.get_token()
-
         headers = {
             "Accept": "application/vnd.github+json",
             "Authorization": token,
             "Content-Type": "application/json",
         }
-        print(headers)
+        return headers
+
+    def get_body(self) -> dict:
         body = {
             "title": self.pr_content.title,
             "base": self.pr_content.base_branch,
             "head": f"{self.credentials.username}:{self.pr_content.head_branch}",
             "body": self.pr_content.body if self.pr_content.body is not None else "",
         }
-        print(body)
-        url = f"https://api.github.com/repos/{self.credentials.username}/{self.credentials.repository_name}/pulls"
+        return body
 
-        response = requests.post(url, headers=headers, json=body)
+    def get_endpoint_url(self) -> str:
+        return f"https://api.github.com/repos/{self.credentials.username}/{self.credentials.repository_name}/pulls"
+
+    def handle_http_response(self, response: requests.Response) -> None:
         match response.status_code:
             case 201:
                 print(
@@ -59,4 +62,11 @@ class PullRequest:
                 print(
                     f"STATUS CODE: {response.status_code}\nRESPONSE BODY: {response.json()}"
                 )
+
+    async def make_pull_request(self):
+        headers = self.get_headers()
+        body = self.get_body()
+        url = self.get_endpoint_url()
+        response = requests.post(url, headers=headers, json=body)
+        self.handle_http_response(response)
         exit(1)
