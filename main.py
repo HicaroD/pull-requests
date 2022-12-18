@@ -38,7 +38,7 @@ async def main():
     pr_content = PullRequestData(args["from"], args["to"], args["title"], args["body"])
     credentials = read_credentials()
     pr = PullRequest(credentials, pr_content)
-    await pr.make_pr()
+    await pr.make_pull_request()
 
 
 if __name__ == "__main__":
