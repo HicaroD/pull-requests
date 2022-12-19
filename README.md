@@ -20,7 +20,7 @@ That's is everything we need to use the program. Now, on your project root direc
 following command:
 
 ```bash
-pull-requests --from HEAD_BRANCH --to BASE_BRANCH
+pull-requests --from "HEAD_BRANCH" --to "BASE_BRANCH" --title "Some title" --body "Some optional body text"
 ```
 
 ## License
