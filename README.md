@@ -2,7 +2,10 @@
 ⬆️ A command line tool for creating pull requests.
 
 ## Installation
-TODO.
+
+```
+pip install pull-requests
+```
 
 ## Usage
 First of all, you need to have a file in your project root directory called `pr.json`. That file needs

@@ -5,10 +5,11 @@ with open("README.md", 'r') as f:
     long_description = f.read()
 
 setup(
-   name='pull-request',
+   name='pull-requests',
    version='1.0.0',
    description='A command line interface for creating pull requests',
    long_description=long_description,
+   long_description_content_type="text/markdown",
    author='Hícaro Dânrlley',
    author_email='hdanrlley1@gmail.com',
    packages=['pull_request'],
