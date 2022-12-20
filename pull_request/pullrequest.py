@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 import requests
-import json
 
 
 @dataclass
