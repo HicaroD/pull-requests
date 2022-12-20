@@ -1,7 +1,7 @@
 import argparse
 import json
 import asyncio
-from pull_request.pullrequest import PullRequest, Credentials, PullRequestData
+from pullrequest import PullRequest, Credentials, PullRequestData
 
 
 def get_argument_parser() -> argparse.ArgumentParser:
