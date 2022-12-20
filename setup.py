@@ -15,9 +15,9 @@ setup(
    install_requires=['requests'], #external packages as dependencies
    python_requires=">=3.10",
    entry_points={
-       "console_scripts": {
-           "pr = pull_request.__main__:main",
-       }
+       "console_scripts": [
+           "pull_request = pull_request.main:_main",
+       ]
     }
 )
 
