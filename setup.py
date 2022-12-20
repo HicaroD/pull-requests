@@ -16,7 +16,7 @@ setup(
    python_requires=">=3.10",
    entry_points={
        "console_scripts": {
-           "pr = pull_request.main:main",
+           "pr = pull_request.__main__:main",
        }
     }
 )
