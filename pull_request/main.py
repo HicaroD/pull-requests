@@ -40,6 +40,8 @@ async def main():
     pr = PullRequest(credentials, pr_content)
     await pr.make_pull_request()
 
+def _main():
+    asyncio.run(main())
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    _main()
