@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-from exceptions import CredentialFileDoesNotExist, InvalidFormatForCredentialFile
+from .exceptions import CredentialFileDoesNotExist, InvalidFormatForCredentialFile
 from dataclasses import dataclass
 
 

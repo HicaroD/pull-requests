@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 import requests
-from credential_manager import Credentials
+from .credential_manager import Credentials
 
 
 @dataclass
