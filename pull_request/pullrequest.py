@@ -1,15 +1,6 @@
 from dataclasses import dataclass
 import requests
-
-
-@dataclass
-class Credentials:
-    username: str
-    repository_name: str
-    token: str
-
-    def get_token(self) -> str:
-        return "Bearer " + self.token
+from .credential_manager import Credentials
 
 
 @dataclass
@@ -52,9 +43,9 @@ class PullRequest:
                 print(
                     f"Pull request from '{self.pr_content.head_branch}' to '{self.pr_content.base_branch}' was successfully made"
                 )
-            case 403:
+            case (403 | 422):
                 print(
-                    "You're probably spamming it. Try again later or check if there are changes to make a pull request"
+                    "Error: This command is probably being spammed. There is probably a pull request for this branch"
                 )
             case _:
                 print("Unexpected behavior")
