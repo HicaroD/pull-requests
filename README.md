@@ -1,6 +1,10 @@
 # pull-requests
 ⬆️ A command line tool for creating pull requests.
 
+## Requirements
+
+- Python 3.10 or above
+
 ## Installation
 
 ```
