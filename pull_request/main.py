@@ -12,7 +12,7 @@ async def main():
         args = argument_parser.parse_args()
 
         pr_content = PullRequestData(
-            args["from"], args["to"], args["title"], args["body"]
+            args["title"], args["body"], args["from"], args["to"]
         )
 
         credential_manager = CredentialManager()
