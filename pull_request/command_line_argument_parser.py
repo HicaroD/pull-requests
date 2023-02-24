@@ -20,7 +20,7 @@ class CommandLineArgumentParser:
             "-t", "--to", help="Changes are going to that branch", required=True
         )
         self.parser.add_argument(
-            "-T", "--title", help="Pull request title",
+            "-T", "--title", help="Title of pull request",
         )
         self.parser.add_argument("-b", "--body", help="Body of the pull request")
 
