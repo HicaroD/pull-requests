@@ -5,10 +5,10 @@ from .credential_manager import Credentials
 
 @dataclass
 class PullRequestData:
+    title: str | None
+    body: str | None
     head_branch: str
     base_branch: str
-    title: str
-    body: str | None
 
 
 class PullRequest:
@@ -27,7 +27,9 @@ class PullRequest:
 
     def get_body(self) -> dict:
         body = {
-            "title": self.pr_content.title,
+            "title": self.pr_content.title
+            if self.pr_content.title is not None
+            else self.pr_content.head_branch,
             "base": self.pr_content.base_branch,
             "head": f"{self.credentials.username}:{self.pr_content.head_branch}",
             "body": self.pr_content.body if self.pr_content.body is not None else "",
@@ -59,4 +61,3 @@ class PullRequest:
         url = self.get_endpoint_url()
         response = requests.post(url, headers=headers, json=body)
         self.handle_http_response(response)
-        exit(1)
