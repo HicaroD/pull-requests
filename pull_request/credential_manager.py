@@ -20,6 +20,10 @@ class CredentialManager:
     def __init__(self) -> None:
         self._pr_json_path = Path("pr.json")
 
+    @property
+    def pr_json_path(self):
+        return self._pr_json_path
+
     def pr_json_file_exists(self) -> bool:
         return self._pr_json_path.is_file()
 
@@ -33,7 +37,7 @@ class CredentialManager:
         if not self.pr_json_file_exists():
             raise CredentialFileDoesNotExist()
 
-        with open(self._pr_json_path) as file:
+        with open(self.pr_json_path) as file:
             pr_json_file = json.loads(file.read())
 
             if not self.has_all_required_keys(pr_json_file):
