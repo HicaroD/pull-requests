@@ -27,8 +27,10 @@ That's is everything we need to use the program. Now, on your project root direc
 following command:
 
 ```bash
-pull-requests --from "HEAD_BRANCH" --to "BASE_BRANCH" --title "Some title" --body "Some optional body text"
+pull-requests --from "HEAD_BRANCH" --to "BASE_BRANCH" --title "Some optional title" --body "Some optional body text"
 ```
+
+Title is optional. If you don't set the title, HEAD_BRANCH name will be used.
 
 ## License
 This project is licensed under the MIT license. See [LICENSE](LICENSE).
